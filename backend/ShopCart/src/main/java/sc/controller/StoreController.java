@@ -69,33 +69,15 @@ public class StoreController {
 		}
 	}
 
+		
 	/**
-	 * REST service for fetching one book from inventory based on book name and
-	 * author
+	 * REST service for fetching one book from inventory based on book code
 	 */
-	@RequestMapping(value = "/books/{name}/{author}", headers = "Accept=*/*", method = RequestMethod.GET, produces = { "application/json" })
+	@RequestMapping(value = "/books/{code}", headers = "Accept=*/*", method = RequestMethod.GET, produces = { "application/json" })
 	@ResponseBody
-	public Book getBook(@PathVariable String name, @PathVariable String author) {
+	public Book getBook(@PathVariable String code) {
 		try {
-			Book book = storeMongoDao.getBook(name, author);
-			return book;
-		} catch (InternalException e) {
-			throw e;
-		} catch (Exception e) {
-			log.error("Cought exception:", e);
-			throw new InternalException(Const.REST_SERVICE_ERROR);
-		}
-	}
-	
-	/**
-	 * REST service for fetching one book from inventory based on book name and
-	 * author
-	 */
-	@RequestMapping(value = "/books/{name}/{author}", headers = "Accept=*/*", method = RequestMethod.GET, produces = { "application/json" })
-	@ResponseBody
-	public Book getBookBy(@PathVariable String name, @PathVariable String author) {
-		try {
-			Book book = storeMongoDao.getBook(name, author);
+			Book book = storeMongoDao.getBookByCode(code);
 			return book;
 		} catch (InternalException e) {
 			throw e;

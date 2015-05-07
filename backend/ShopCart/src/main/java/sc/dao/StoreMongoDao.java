@@ -2,6 +2,7 @@ package sc.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import static com.mongodb.client.model.Filters.*;
 
 import javax.inject.Named;
 
@@ -85,16 +86,22 @@ public class StoreMongoDao extends MongoDao {
 	/**
 	 * fetch one book from db
 	 * 
-	 * @param name
-	 *            book's name
-	 * @param author
-	 *            book's author
+	 * @param code
+	 *            book's code
 	 * @return fetched book
 	 */
-	public Book getBook(String name, String author) {
-		Book book = null;
+	public Book getBookByCode(String code) {
+		Book book=null;
 		initMongo();
+		try {
+				Document doc = booksCollection.find(eq("code", code)).first();
+				book = MongoUtil.getBook(doc);
+				log.debug("fetched book :" + doc.toJson());
+		} catch (Exception e) {
+			log.error("Cought exc:", e);
+			shutdown();
+			throw new InternalException(Const.MONGO_DATA_FETCH_ERROR);
+		} 
 		return book;
 	}
-
 }
