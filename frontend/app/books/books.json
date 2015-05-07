@@ -1,0 +1,23 @@
+[
+    {
+        "code": "sku1001", 
+        "imageUrl": "img/books/colormehappy.jpg", 
+        "name": "Color Me Happy", 
+		"author":"Lacy Mucklow",
+		"price" : "25.25"
+       }, 
+    {
+        "code": "sku1003", 
+        "imageUrl": "img/books/unbroken_.jpg", 
+        "name": "Unbroken: A World War II Story",
+		"author":"Laura Hillenbrand",
+		"price" : "18.50"
+    }, 
+    { 
+        "code": "sku1004", 
+        "imageUrl": "img/books/american_sniper.jpg", 
+        "name": "American Sniper",
+		"author":"Chris Kyle and Scott McEwen",
+        "price" : "24.50"
+    }
+]

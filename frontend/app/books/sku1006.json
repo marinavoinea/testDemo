@@ -1,0 +1,8 @@
+{
+        "code": "sku1006", 
+        "imageUrl": "img/books/iron-clad-java.jpg", 
+        "name": "Good To Great",
+        "author":"Jim Collins",		
+		"price" : "23.19",
+		"description" : "Best practices for authentication, access control, data protection, attack prevention, error handling, and much more are included. Using the practical advice and real-world examples provided in this authoritative resource, you'll gain valuable secure software engineering skills"
+    }

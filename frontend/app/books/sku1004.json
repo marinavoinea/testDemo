@@ -1,0 +1,8 @@
+{ 
+        "code": "sku1004", 
+        "imageUrl": "img/books/american_sniper.jpg", 
+        "name": "American Sniper: The Autobiography of the Most Lethal Sniper in U.S. Military History",
+		"author":"Chris Kyle and Scott McEwen",
+        "price" : "24.50",
+		"description" : " From 1999 to 2009, U.S. Navy Seal Chris Kyle recorded the most career sniper kills in United States military history. His fellow American warriors, whom he protected with deadly precision from rooftops and stealth positions during the Iraq War, called him “The Legend”; meanwhile, the enemy feared him so much they named him al-Shaitan (“the devil”) and placed a bounty on his head."
+    }

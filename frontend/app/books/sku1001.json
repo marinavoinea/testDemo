@@ -1,0 +1,8 @@
+    {
+        "code": "SKU1001", 
+        "imageUrl": "img/books/colormehappy.jpg", 
+        "name": "Color Me Happy", 
+		"author":"Lacy Mucklow",
+		"price" : "25.25",
+		"description" : "Organized into therapeutically-themed chapters, this book examines the benefits of putting pencil to paper and offers adults an opportunity to channel their anxiety into joyful creative accomplishment"
+    }

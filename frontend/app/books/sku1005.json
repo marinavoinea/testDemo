@@ -1,0 +1,8 @@
+{
+        "code": "sku1005", 
+        "imageUrl": "img/books/good_to_great.jpg", 
+        "name": "Good To Great",
+        "author":"Jim Collins",		
+		"price" : "23.19",
+		"description" : "Five years ago, Jim Collins asked the question, "Can a good company become a great company and if so, how?" In Good to Great Collins, the author of Built to Last, concludes that it is possible, but finds there are no silver bullets"
+    }

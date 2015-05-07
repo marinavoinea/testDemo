@@ -1,0 +1,57 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-2">
+			<!--Sidebar content-->
+			<div>
+				<h3>Online bookstore</h3>
+			</div>
+			</br>
+			</br> <strong>
+				<div>
+					Search&nbsp <span class="glyphicon glyphicon-search"></span> <input
+						class="img-rounded" ng-model="query">
+				</div>
+				<div>
+					Sort by: <select ng-model="orderProp" class="img-rounded">
+						<option value="name">Name</option>
+						<option value="author">Author</option>
+					</select>
+				</div> </br>
+			</br>
+
+				<p>Your ShoppingCart :
+				<p>
+					<a ng-href="#/cart" title="go to shopping cart"
+						ng-disabled="cart.getTotalCount() < 1"> <i
+						class="fa fa-shopping-cart fa-4x " /> <b>Items:
+							{{cart.getTotalCount()}} {{cart.getTotalPrice() | currency}}</b>
+					</a>
+				</p>
+			</strong>
+		</div>
+		<div class="col-md-10">
+			<!--Body content-->
+			<ul class="phones">
+				<li ng-repeat="book in books | filter:query | orderBy:orderProp"
+					class="thumbnail"><a ng-href="#/books/{{book.code}}"
+					class="thumb" target="_blank"> <img ng-src="{{book.imageUrl}}"
+						border="2" width="158" height="150" hspace="10"></a>
+					<p>
+						Title: <a ng-href="#/books/{{book.code}}">{{book.name}}</a>
+					</p>
+
+					<p>
+						Author: <a ng-href="#/books/{{book.code}}">{{book.author}}</a>
+					</p>
+					<p>
+						Price: <a ng-href="#/books/{{book.code}}">{{book.price |
+							currency}}</a> &nbsp; &nbsp;&nbsp;&nbsp; <i
+							class="fa fa-shopping-cart fa-2x" /><a href=""
+							ng-click="cart.addItem(book.code, book.name, book.author, book.price, 1)">
+							add to cart </a>
+					<p>
+			</ul>
+
+		</div>
+	</div>
+</div>
