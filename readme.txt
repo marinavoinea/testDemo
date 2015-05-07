@@ -1,6 +1,5 @@
 
-This is a full stack java shopping cart demo application comprised of two projects (front
-end using 
+This is a full stack java shopping cart demo application comprised of two projects (frontend using 
 angular/bootstrap) and a backend project (Java EE/Spring /Mongo DB app integration) tested in Tomcat 
 web container  and JBoss eap6.3 application container).
 Together the projects can be used as "turn key" applications, fully configured and runnable as
