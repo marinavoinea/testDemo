@@ -3,7 +3,7 @@ package sc.dao;
 import org.apache.log4j.Logger;
 import org.bson.Document;
 
-import sc.InternalException;
+import sc.exceptions.InternalException;
 import sc.constants.Const;
 
 import com.mongodb.MongoClient;

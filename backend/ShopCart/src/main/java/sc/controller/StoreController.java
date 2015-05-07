@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import sc.InternalException;
+import sc.exceptions.InternalException;
 import sc.constants.Const;
 import sc.dao.StoreMongoDao;
 import sc.model.Book;

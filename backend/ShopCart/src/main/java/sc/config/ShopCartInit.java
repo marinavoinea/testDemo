@@ -10,6 +10,14 @@ import org.springframework.web.servlet.DispatcherServlet;
 
 import sc.constants.Const;
 
+/**
+ * Spring web and servlet initialization
+ * The app an be deployed either in Tomcat web container
+ * or in JBoss EE application container
+ * 
+ * @author marina
+ *
+ */
 public class ShopCartInit implements WebApplicationInitializer {
 
 	public void onStartup(ServletContext container) throws ServletException {

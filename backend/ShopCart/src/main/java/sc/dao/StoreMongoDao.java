@@ -10,7 +10,7 @@ import org.bson.Document;
 
 import com.mongodb.client.MongoCursor;
 
-import sc.InternalException;
+import sc.exceptions.InternalException;
 import sc.constants.Const;
 import sc.dao.util.MongoUtil;
 import sc.model.Book;

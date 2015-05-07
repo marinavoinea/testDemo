@@ -1,4 +1,4 @@
-package sc;
+package sc.exceptions;
 
 public class InternalException extends RuntimeException{
 
