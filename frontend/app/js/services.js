@@ -19,13 +19,13 @@ bookcatServices.factory('Book', [ '$resource', function($resource) {
 	});
 } ]);
 
-// create service to provide a shopping cart that
+// create service to provide a shopping cart
 bookcatApp.factory("Cart", function() {
 
 	// create shopping cart
 	var myCart = new shoppingCart("BookStore");
 
-	// return data object with store and cart
+	// return data object containing the cart
 	return {
 		cart : myCart
 	};
