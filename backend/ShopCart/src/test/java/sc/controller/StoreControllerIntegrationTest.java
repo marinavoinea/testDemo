@@ -3,11 +3,7 @@ package sc.controller;
 import static com.jayway.restassured.RestAssured.given;
 
 import org.apache.log4j.Logger;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import sc.model.Book;
@@ -46,7 +42,7 @@ public class StoreControllerIntegrationTest {
 				.contentType("application/json")
 				.accept("application/json")
 				.when()
-				.get("http://localhost:8080/shopcart/store/books")
+				.get("http://localhost:8080/shopcart/store/storebooks")
 				.then()
 				.statusCode(200)
 				.contentType(ContentType.JSON).extract().response();
@@ -60,9 +56,9 @@ public class StoreControllerIntegrationTest {
 	@Test
 	public void test_fetch_all_books_pojo() {
 		
-		Store store = given()
+		Store store= given()
 				.contentType("application/json")
-				.get("http://localhost:8080/shopcart/store/books")
+				.get("http://localhost:8080/shopcart/store/storebooks")
 				.as(Store.class);
 		Assert.assertNotNull(store);
 		Assert.assertTrue("There should be at  least 2 books in store!",store.getBookList().size()>=2);

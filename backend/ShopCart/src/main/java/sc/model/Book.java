@@ -13,15 +13,17 @@ public class Book {
 	double price;
 	String code;   
 	String description;
+	String imageUrl;
 	
 	public Book(){};
 	
-	public Book(String name,String author,double price,String code,String descr){
+	public Book(String name,String author,double price,String code,String descr,String imageUrl){
 		this.name=name;
 		this.author=author;
 		this.price=price;
 		this.code=code;
 		this.description=descr;
+		this.imageUrl = imageUrl;
 	}
 	public String getName() {
 		return name;
@@ -53,5 +55,11 @@ public class Book {
 	public void setType(String type) {
 		this.description = type;
 	}
-	
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
 }

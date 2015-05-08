@@ -69,8 +69,9 @@ public class StoreControllerMockDbTest {
 		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext)
 				.build();
         store=new Store();
-		Book book1 = new Book("Book1", "Author1", 32.0, "AB00", "history");
-		Book book2 = new Book("Book2", "Author2", 25.0, "AB01", "fiction");
+ 
+		Book book1 = new Book("Book1", "Author1", 32.0, "AB00", "history", "img1.jpg");
+		Book book2 = new Book("Book2", "Author2", 25.0, "AB01", "fiction","img2.jpg");
 		store.addBook(book1);
 		store.addBook(book2);
 	}

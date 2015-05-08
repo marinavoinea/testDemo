@@ -40,7 +40,8 @@ public class MongoUtil {
 		book.setAuthor((String)bookDoc.get("author"));
 		book.setPrice((Double)bookDoc.get("price"));
 		book.setCode((String)bookDoc.get("code"));
-		book.setType((String)bookDoc.get("type"));  
+		book.setType((String)bookDoc.get("type")); 
+		book.setImageUrl((String)bookDoc.get("imageUrl")); 
 		return book;
 	}
 }

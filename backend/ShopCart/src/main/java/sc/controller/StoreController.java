@@ -1,6 +1,9 @@
 package sc.controller;
 
+import java.util.List;
+
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,9 +43,28 @@ public class StoreController {
 	 **/
 	@RequestMapping(value = "/books", headers = "Accept=*/*", method = RequestMethod.GET, produces = { "application/json" })
 	@ResponseBody
-	public Store store() {
+	public List<Book> books(HttpServletResponse response) {
 		try {
 			Store store = storeMongoDao.getStore();
+			setHeaders(response);
+			return store.getBookList();
+		} catch (InternalException e) {
+			throw e;
+		} catch (Exception e) {
+			log.error("Cought exception:", e);
+			throw new InternalException(Const.REST_SERVICE_ERROR);
+		}
+	}
+	
+	/**
+	 * REST service for getting all books inventory
+	 **/
+	@RequestMapping(value = "/storebooks", headers = "Accept=*/*", method = RequestMethod.GET, produces = { "application/json" })
+	@ResponseBody
+	public Store store(HttpServletResponse response) {
+		try {
+			Store store = storeMongoDao.getStore();
+			setHeaders(response);
 			return store;
 		} catch (InternalException e) {
 			throw e;
@@ -57,9 +79,10 @@ public class StoreController {
 	 **/
 	@RequestMapping(value = "/book", headers = "Accept=application/json", method = RequestMethod.POST, produces = { "application/json" })
 	@ResponseBody
-	public Book saveBook(@RequestBody Book book) {
+	public Book saveBook(@RequestBody Book book, HttpServletResponse response) {
 		try {
 			Book savedBook = storeMongoDao.addBook(book);
+			setHeaders(response);
 			return savedBook;
 		} catch (InternalException e) {
 			throw e;
@@ -73,11 +96,13 @@ public class StoreController {
 	/**
 	 * REST service for fetching one book from inventory based on book code
 	 */
-	@RequestMapping(value = "/books/{code}", headers = "Accept=*/*", method = RequestMethod.GET, produces = { "application/json" })
+	@RequestMapping(value = "/{code}", headers = "Accept=*/*", method = RequestMethod.GET, produces = { "application/json" })
 	@ResponseBody
-	public Book getBook(@PathVariable String code) {
+	public Book getBook(@PathVariable String code, HttpServletResponse response) {
 		try {
 			Book book = storeMongoDao.getBookByCode(code);
+			setHeaders(response);
+			
 			return book;
 		} catch (InternalException e) {
 			throw e;
@@ -86,7 +111,12 @@ public class StoreController {
 			throw new InternalException(Const.REST_SERVICE_ERROR);
 		}
 	}
-
+    
+	private void setHeaders(HttpServletResponse response){
+		 response.setHeader("Access-Control-Allow-Origin", "*");
+		 response.setHeader("Access-Control-Allow-Headers", "x-requested-with");
+	}
+	
 	public StoreMongoDao getStoreMongoDao() {
 		return storeMongoDao;
 	}

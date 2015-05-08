@@ -1,0 +1,56 @@
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="col-md-2">
+			</br>
+			</br>
+			<div>
+				<i class="fa fa-shopping-cart fa-4x " />
+			</div>
+			<div>
+				<strong>Order submitted :<strong>
+			</div>
+			</br> <strong><u><em><a href="#/books"
+						title="back to store"> Back to store</a></em></u></strong>
+
+		</div>
+		<div class="col-md-8">
+			</br>
+			</br>
+			</p>
+			<!-- items -->
+			<table class="table table-striped table-bordered table-condensed">
+				<!-- header -->
+				<tr>
+					<td class="tdCenter"><b>Name</b></td>
+					<td class="tdCenter"><b>Author</b></td>
+					<td class="tdCenter"><b>Quantity</b></td>
+					<td class="tdCenter"><b>Total Price</b></td>
+				</tr>
+
+				<!-- cart items -->
+				<tr ng-repeat="item in savedCart.items | orderBy:'name'">
+					{{item.name}}{{item.author}}{{item.quantity}}
+					<td>{{item.name}}</td>
+					<td>{{item.author}}</td>
+					<td>{{item.quantity}}</td>
+					<td>{{item.price * item.quantity | currency}}</td>
+				</tr>
+				<tr>
+					<td><b>Total</b></td>
+					<td></td>
+					<td class="tdCenter"><b>{{savedCart.getTotalCount()}}</b></td>
+					<td class="tdRight"><b>{{savedCart.getTotalPrice() |
+							currency}}</b></td>
+				</tr>
+			</table>
+			<br>
+			<p>Your order has been processed and your shopcart is empty now</p>
+			<p>Thank you!</p>
+			</br>
+			</br>
+			</br>
+		</div>
+
+
+	</div>
+</div>
