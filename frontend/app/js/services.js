@@ -7,7 +7,7 @@ var bookcatServices = angular.module('bookcatServices', [ 'ngResource' ]);
 bookcatServices.factory('Book', [ '$resource', function($resource) {
 
 	 //return $resource('books/:bookCode.json', {}, { //read from json file for testing
-	return $resource('http://localhost:8080/shopcart/store/books/:bookCode', {}, { //invoke REST
+	return $resource('http://localhost:8080/shopcart/store/:bookCode', {}, { //invoke REST
 		query : {
 			method : 'GET',
 			params : {
